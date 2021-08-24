@@ -20,7 +20,7 @@ class Randomfacts(BotPlugin):
     def randomfacts_send(self, msg, random):
         """Random Fact"""
         # apodapi.herokuapp.com/api/?date=2001-07-12
-        url = 'https://uselessfacts.jsph.pl/random.json'
+        url = 'https://uselessfacts.jsph.pl/random.json?language=en'
         page = urllib.request.Request(url)
         response = json.loads(urllib.request.urlopen(page).read().decode('utf-8'))
         if 'text' in response:
