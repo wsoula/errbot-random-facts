@@ -1,0 +1,9 @@
+[Core]
+Name = Randomfacts
+Module = randomfacts
+
+[Documentation]
+Description = Respond with a random fact from https://uselessfacts.jsph.pl/random.json
+
+[Python]
+Version = 3
