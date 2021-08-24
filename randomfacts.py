@@ -17,7 +17,7 @@ class Randomfacts(BotPlugin):
         """Today Random Fact of the day"""
         return self.randomfacts_send(msg, random=True)
 
-    def apod_send(self, msg, random):
+    def randomfacts_send(self, msg, random):
         """Random Fact"""
         # apodapi.herokuapp.com/api/?date=2001-07-12
         url = 'https://uselessfacts.jsph.pl/random.json'
