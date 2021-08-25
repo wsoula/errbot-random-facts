@@ -1,7 +1,10 @@
 """Random Facts"""
 import urllib.request
 import json
+import os
 from errbot import BotPlugin, botcmd
+
+language = os.getenv('language', 'en')
 
 
 class Randomfacts(BotPlugin):
@@ -20,7 +23,11 @@ class Randomfacts(BotPlugin):
     def randomfacts_send(self, msg, random):
         """Random Fact"""
         # apodapi.herokuapp.com/api/?date=2001-07-12
-        url = 'https://uselessfacts.jsph.pl/random.json?language=en'
+        if random:
+            path = '/random.json'
+        else:
+            path = '/today.json'
+        url = 'https://uselessfacts.jsph.pl/' + path + '?language=' + language
         page = urllib.request.Request(url)
         response = json.loads(urllib.request.urlopen(page).read().decode('utf-8'))
         if 'text' in response:
