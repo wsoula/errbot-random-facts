@@ -13,12 +13,12 @@ class Randomfacts(BotPlugin):
     @botcmd
     def random(self, msg, args):
         """Random Fact from https://uselessfacts.jsph.pl/random.json"""
-        return self.randomfacts_send(msg, random=False)
+        return self.randomfacts_send(msg, random=True)
 
     @botcmd
     def random_today(self, msg, args):
         """Today Random Fact of the day"""
-        return self.randomfacts_send(msg, random=True)
+        return self.randomfacts_send(msg, random=False)
 
     def randomfacts_send(self, msg, random):
         """Random Fact"""
